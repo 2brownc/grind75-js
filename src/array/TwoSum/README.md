@@ -28,10 +28,10 @@ Output: [0,1]
 
 2 <= nums.length <= 10^4
 
--10^9 <= nums[i] <= 10^9
+-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup>
 
--10^9 <= target <= 10^9
+-10<sup>9</sup> <= target <= 10<sup>9</sup>
 
 Only one valid answer exists.
 
-Follow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?
+Follow-up: Can you come up with an algorithm that is less than O(n<sup>2</sup>) time complexity?
