@@ -13,18 +13,13 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].<br>
 Input: nums = [3,2,4], target = 6<br>
 Output: [1,2]<br>
 
-**Example 3:**
+**Example 3:**  
+Input: nums = [3,3], target = 6  
+Output: [0,1]  
 
-Input: nums = [3,3], target = 6
-
-Output: [0,1]
-
-**Constraints:**
-
-2 <= nums.length <= 10^4
-
--10<sup>9</sup> <= nums[i] <= 10<sup>9</sup>
-
+**Constraints:**  
+2 <= nums.length <= 10<sup>4</sup>  
+-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup>  
 -10<sup>9</sup> <= target <= 10<sup>9</sup>
 
 Only one valid answer exists.
