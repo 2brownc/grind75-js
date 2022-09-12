@@ -1,6 +1,6 @@
 # 57. [Insert Interval](https://leetcode.com/problems/insert-interval/)
 
-You are given an array of non-overlapping intervals `intervals` where $\texttt{intervals[i] = [start_i, end_i]}$ represent the start and the end of the $\texttt{i<sup>th</sup>}$ interval and intervals is sorted in ascending order by starti. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
+You are given an array of non-overlapping intervals `intervals` where $\texttt{intervals[i] = [start<sub>i</sub>, endi]}$ represent the start and the end of the $\texttt{i<sup>th</sup>}$ interval and intervals is sorted in ascending order by starti. You are also given an interval `newInterval = [start, end]` that represents the start and end of another interval.
 
 Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
 
