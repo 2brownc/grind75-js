@@ -15,19 +15,14 @@ Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
 Output: [[1,2],[3,10],[12,16]]  
 Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
-**Constraints:**  
+**Constraints:**
 
-$$0 <= intervals.length <= 10^4$$
-
-$$intervals[i].length == 2$$
-
-$$0 <= start_i <= end_i <= 10^5$$
-
-$$intervals is sorted by start_i in ascending order$$
-
-$$newInterval.length == 2$$
-
-$$0 <= start <= end <= 10^5$$
+0 <= intervals.length <= 10^4
+intervals[i].length == 2
+0 <= start_i <= end_i <= 10^5
+intervals is sorted by start_i in ascending order
+newInterval.length == 2
+0 <= start <= end <= 10^5
 
 ## Explanation
 
