@@ -43,6 +43,8 @@ currentInterval = [a2, b2]
 mergedInterval = [min(a1, a2), max(b1,b2)];
 ```
 
+**The Plan**
+
 The first step in solving this problem is recognizing that each interval that we push to the array `updatedIntervals` will depend on how `interval` stands against the current `currentInterval`. There are three cases.
 
 ![image](<./images/cases.png> "Different Cases")
@@ -62,6 +64,7 @@ The first step in solving this problem is recognizing that each interval that we
 Once we traverse through `intervals` deciding which interval needs to be pushed to `udpatedIntervals` according to the above cases then we will have successfully completed the task.
 
 ## Pseudo Code
+
 ```
 FUNCTION insert(intervals, newInterval)
 	updatedIntervals <- []
@@ -113,7 +116,7 @@ FUNCTION insert(intervals, newInterval)
  * @param {number[]} newInterval
  * @return {number[][]}
  */
-function insert(intervals, newInterval) {
+var insert = function(intervals, newInterval) {
   const updatedIntervals = [];
   let currentInterval = newInterval;
   let index = 0;
