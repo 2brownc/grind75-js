@@ -30,7 +30,7 @@ We will traverse the array `intervals` as `interval` and push the newly computed
 
 **How do we merge intervals?**    
 
-![images][<./images/mergeInterval.png> "Merging Intervals"]
+![images](<./images/mergeInterval.png> "Merging Intervals")
 
 Consider `interval = [4, 6]` and `currentInterval = [3, 5]`. Now the merged interval would be the one encompasses both the intervals as in `[3. 6]` .
 
@@ -45,7 +45,7 @@ mergedInterval = [min(a1, a2), max(b1,b2)];
 
 The first step in solving this problem is recognizing that each interval that we push to the array `updatedIntervals` will depend on how `interval` stands against the current `currentInterval`. There are three cases.
 
-![image][<./images/cases.png> "Different Cases"]
+![image](<./images/cases.png> "Different Cases")
 
 **Case 1**
 
@@ -59,9 +59,96 @@ The first step in solving this problem is recognizing that each interval that we
 
 `interval` occurs after the current `currentInterval`. That means the `interval` and all the subsequent elements in `intervals` can be pushed into `udpatedIntervals`.
 
-Once we traverse through `intervals` deciding which interval needs to be pushed to `udpatedIntervals` according to the above cases when we have successfully completed the task.
+Once we traverse through `intervals` deciding which interval needs to be pushed to `udpatedIntervals` according to the above cases then we will have successfully completed the task.
 
 ## Pseudo Code
+```
+FUNCTION insert(intervals, newInterval)
+	updatedIntervals <- []
+	currentInterval <- newInterval
+	index <- 0
+	
+	/* CASE 1 */
+	WHILE
+		index < intervals.length
+		AND
+		intervals[index][1] < currentInterval[index]
+	DO
+	  	updatedIntervals.push(currentInterval)
+		index <- index + 1
+
+	/* CASE 2 */
+	WHILE
+		index < intervals.length
+		AND
+		intervals[index][0] <= currentInterval[1]
+	DO
+	    currentInterval[0] <- MIN(
+	      intervals[index][0],
+	      currentInterval[0]
+	    )
+	    currentInterval[1] <- MAX(
+	      intervals[index][1],
+	      currentInterval[1]
+	    )
+	
+	    index <- index + 1
+
+	updatedIntervals.push(currentInterval)
+
+	/* CASE 3 */	
+	WHILE index < intervals.length DO
+		updatedIntervals.push(intervals[index])
+		index <- index + 1
+	
+	RETURN updatedIntervals
+```
+
 
 ## JavaScript Implementation
 
+```js
+/**
+ * @param {number[][]} intervals
+ * @param {number[]} newInterval
+ * @return {number[][]}
+ */
+function insert(intervals, newInterval) {
+  const updatedIntervals = [];
+  let currentInterval = newInterval;
+  let index = 0;
+
+  while (
+    index < intervals.length
+    && intervals[index][1] < currentInterval[0]
+  ) {
+    updatedIntervals.push(intervals[index]);
+    index += 1;
+  }
+
+  while (
+    index < intervals.length
+    && intervals[index][0] <= currentInterval[1]
+  ) {
+    currentInterval[0] = Math.min(
+      intervals[index][0],
+      currentInterval[0]
+    );
+    currentInterval[1] = Math.max(
+      intervals[index][1],
+      currentInterval[1]
+    );
+
+    index += 1;
+  }
+
+  updatedIntervals.push(currentInterval);
+
+  while (index < intervals.length) {
+    updatedIntervals.push(intervals[index]);
+    index += 1;
+  }
+
+  return updatedIntervals;
+};
+```
