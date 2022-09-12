@@ -50,16 +50,16 @@ As we recall each entry in `profit` has an index and a value. The index represen
 
 ```
 FUNCTION maxProfit(prices)
-	highestSell <- prices[-1]
-	profit <- 0
-	
-	FOR i in {prices.length-1..0} DO
-		IF highestSell > prices[i] THEN
-		profit <- MAX(profit, highestSell - prices[i])
-	ELSE
-		highestSell <- prices[i]
-	
-	RETURN profit
+  highestSell <- prices[-1]
+  profit <- 0
+  
+  FOR i in {prices.length-1..0} DO
+    IF highestSell > prices[i] THEN
+    profit <- MAX(profit, highestSell - prices[i])
+  ELSE
+    highestSell <- prices[i]
+  
+  RETURN profit
 ```
 
 ### JavaScript Implementation
