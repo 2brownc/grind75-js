@@ -62,6 +62,20 @@ FUNCTION maxProfit(prices)
   RETURN profit
 ```
 
+### Complexity Analysis
+
+**Time Complexity**
+
+$$O(n)$$
+
+The array `price` is traversed once, `O(n)`,along with a constant number of comparisons, assignments and computations, `O(k), k < n`. `O(n+k) is O(n)`.
+
+**Space Complexity**
+
+$$O(n)$$
+
+The algorithm has an input size of `n` so in `O(n)`. A few variables are created that use a constant amount of auxiliary space `O(k), k < n`. `O(n+k) is O(n)`.
+
 ### JavaScript Implementation
 
 ```js
