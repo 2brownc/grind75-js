@@ -34,17 +34,16 @@ In an array `nums` we need to find two elements such at that `nums[i] + nums[j] 
 
 ### Algorithm
 
-- We will traverse `nums` and during every iteration , `i`, we will store the index and value of `nums[i]` in a hash map `seen` such that `seen[nums[i] <- i`.
-- During the traversal we will come across two elements at `i` and `j` such that  `nums[i] + nums[j] = target` which is `target - nums[j] = nums[i]`.
+- We will traverse `nums` and during every iteration , `i`, we will check if we would come across two elements `i` and `j` such that  `nums[i] + nums[j] = target` which is `target - nums[j] = nums[i]`.
 - We will check if corresponding `nums[j]` is present in `seen`.
 - If `nums[j]` is found in `seen` then we return `[i, j]`.
-- If `nums[i]` is not found in `seen` then we will store `nums[j]` in seen and continue traversing `nums`.
+- If `nums[j]` is not found in `seen` then we will store `nums[i]` in seen and continue traversing `nums`.
 
 ### Pseudo Code
 
 ```
 FUNCTION twoSum(nums, target)
-	seen <- HASH_MAP
+	seen <- MAP
 	
 	FOR i IN {0..nums.length-1} DO
 		difference <- target - nums[i]
