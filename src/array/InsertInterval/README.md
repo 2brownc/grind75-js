@@ -17,12 +17,12 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
 **Constraints:**
 
-0 <= intervals.length <= 10<sup>4</sup>  
-intervals[i].length == 2  
-0 <= start<sub>i</sub> <= end<sub>i</sub> <= 10<sup>5</sup>  
-intervals is sorted by start<sub>i</sub> in ascending order  
-newInterval.length == 2  
-0 <= start <= end <= 10<sup>5</sup>  
+- 0 <= intervals.length <= 10<sup>4</sup>
+- intervals[i].length == 2
+- 0 <= start<sub>i</sub> <= end<sub>i</sub> <= 10<sup>5</sup>
+- intervals is sorted by start<sub>i</sub> in ascending order
+- newInterval.length == 2
+- 0 <= start <= end <= 10<sup>5</sup>
 
 ## Explanation
 
