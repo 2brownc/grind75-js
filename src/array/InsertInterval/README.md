@@ -47,7 +47,7 @@ mergedInterval = [min(a1, a2), max(b1,b2)];
 
 The first step in solving this problem is recognizing that each interval that we push to the array `updatedIntervals` will depend on how `interval` stands against the current `currentInterval`. There are three cases.
 
-![image](<./images/cases00000.png> "Different Cases")
+![image](<./images/cases.png> "Different Cases")
 
 **Case 1**
 
