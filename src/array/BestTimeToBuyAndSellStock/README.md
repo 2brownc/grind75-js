@@ -68,9 +68,9 @@ FUNCTION maxProfit(prices)
 
 The array `price` is traversed once, `O(n)`, along with a constant number of comparisons, assignments and computations, `O(1)`. `O(n+1) is O(n)`.
 
-**Space Complexity: `O(n)`**
+**Auxiliary Space Complexity: `O(1)`**
 
-The algorithm has an input size of `n` so in `O(n)`. A few variables are created that use a constant amount of auxiliary space `O(1)`. `O(n+1) is O(n)`.
+A few variables are created that use a constant amount of auxiliary space `O(1)`.
 
 ### JavaScript Implementation
 

@@ -18,6 +18,3 @@ n == nums.length
 -10<sup>9</sup> <= nums[i] <= 10<sup>9 </sup>
 
 Follow-up: Could you solve the problem in linear time and in O(1) space?
-
-## Solution
-
