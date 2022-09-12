@@ -17,16 +17,14 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
 **Constraints:**  
 
-$$
-\being{itemize}
-\item 0 <= intervals.length <= 10^4  
-\item intervals[i].length == 2  
-\item 0 <= start_i <= end_i <= 10^5  
-\item intervals is sorted by start_i in ascending order.  
-\item newInterval.length == 2  
-\item 0 <= start <= end <= 10_5
-\end{itemize}
-$$
+```
+0 <= intervals.length <= 10⁴
+intervals[i].length == 2
+0 <= start_i <= end_i <= 10⁵
+intervals is sorted by start_i in ascending order
+newInterval.length == 2
+0 <= start <= end <= 10⁵
+```
 
 ## Explanation
 
