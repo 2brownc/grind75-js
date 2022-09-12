@@ -30,7 +30,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n<sup>2</sup>) 
 
 ### Discussion
 
-In an array `nums` we need to find two elements such at that `nums[i] + nums[j] = target` or `target - nums[j] = nums[i]`. So while traversing `nums` we try to check if there is a corresponding <code>j<sup>th</sup></code> element for the current <code>i<sup>th</sup></code> element. If there exists one then we can return either `[i, j]` or `[j, i]`.
+In an array `nums` we need to find two elements such at that `nums[i] + nums[j] = target` or `target - nums[j] = nums[i]`. So while traversing `nums` we check if there is a corresponding <code>j<sup>th</sup></code> element for the current <code>i<sup>th</sup></code> element. If there exists one then we can return either `[i, j]` or `[j, i]`.
 
 ### Algorithm
 
