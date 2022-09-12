@@ -7,7 +7,7 @@ Insert `newInterval` into `intervals` such that `intervals` is still sorted in a
 Return intervals after the insertion.
 
 **Example 1:**  
-Input: intervals = [[1,3],[6,9]], newInterval = [2,5]  
+Input: `intervals` = [[1,3],[6,9]], `newInterval` = [2,5]  
 Output: [[1,5],[6,9]]
 
 **Example 2:**  
