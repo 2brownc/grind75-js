@@ -24,7 +24,9 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 - <code>newInterval.length == 2</code>
 - <code>0 <= start <= end <= 10<sup>5</sup></code>
 
-## Explanation
+## Solution
+
+### Discussion
 
 We will traverse the array `intervals` as `interval` and push the newly computed intervals into the required array `updatedIntervals`. `currentInterval` will be the same as `newInterval` but might change if we have to merge any intervals that overlap.
 
