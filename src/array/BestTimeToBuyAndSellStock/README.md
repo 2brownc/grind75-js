@@ -55,9 +55,9 @@ FUNCTION maxProfit(prices)
 	
 	FOR i in {prices.length-1..0} DO
 		IF highestSell > prices[i] THEN
-			profit <- MAX(profit, highestSell - prices[i])
-		ELSE
-			highestSell <- prices[i]
+		profit <- MAX(profit, highestSell - prices[i])
+	ELSE
+		highestSell <- prices[i]
 	
 	RETURN profit
 ```
