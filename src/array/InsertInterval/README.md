@@ -17,8 +17,7 @@ Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
 **Constraints:**  
 
-```math
-0 <= intervals.length <= 10^4
+$$0 <= intervals.length <= 10^4
 
 intervals[i].length == 2
 
@@ -28,8 +27,7 @@ intervals is sorted by start_i in ascending order
 
 newInterval.length == 2
 
-0 <= start <= end <= 10^5
-```
+0 <= start <= end <= 10^5$$
 
 ## Explanation
 
