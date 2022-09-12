@@ -61,7 +61,4 @@ The first step in solving this problem is recognizing that each interval that we
 
 Once we traverse through `intervals` deciding which interval needs to be pushed to `udpatedIntervals` according to the above cases when we have successfully completed the task.
 
-## Pseudo Code
-
-## JavaScript Implementation
 
