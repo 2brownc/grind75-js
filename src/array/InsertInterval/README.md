@@ -109,6 +109,20 @@ FUNCTION insert(intervals, newInterval)
 	RETURN updatedIntervals
 ```
 
+### Complexity Analysis
+
+**Time Complexity: `O(n)`**
+
+The array `interval` will be traversed once so the time complexity is `O(n)`.
+
+**Auxiliary Space Complexity: `O(n)`**
+
+A new array `updatedIntervals` is constructed required memory allocation. Also a few variables that take up constant space are created.
+
+At worst case it's length is `n+1` because `newInterval` doesn't not overlap any intervals in `intervals` and is simply added in the appropriate place. So worst case auxiliary space complexity is `O(n)`.
+
+Best case would be `newInterval` would cause all the intervals to merge into a single interval. So best case auxiliary space complexity is `O(1)`.
+
 
 ## JavaScript Implementation
 
