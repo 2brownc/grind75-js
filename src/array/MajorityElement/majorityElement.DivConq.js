@@ -11,7 +11,6 @@ function majorityElement(nums) {
   }
 
   const getMajorityElement = (low, high) => {
-    console.log("lo hi", low, high);
     if (low === high) {
       return nums[low]
     }
