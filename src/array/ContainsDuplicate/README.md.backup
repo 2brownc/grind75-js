@@ -56,9 +56,9 @@ At worst there is no duplicate elements and the program has to traverse the whol
 
 **Auxiliary Space Complexity: O(n)**
 
-Again at the worst there are no duplicate elements and the program has to traverse the whole array `nums`. In this process the hash map will be populated with all the `n` elements of the array. So auxiliary time complexity is `O(n)` at worst case.
+Again at the worst there are no duplicate elements and the program has to traverse the whole array `nums`. In this process the hash map `seen` will be populated with all the `n` elements of the array. So auxiliary time complexity is `O(n)` at worst case.
 
-In contrast if the first two elements are the same in the array as in `nums = [2, 2, 3, ...]` then the time complexity will be `O(2) which is O(1)`. And auxiliary space complexity will be `O(1)`. This is the best case.
+In contrast if the first two elements are the same in the array as in `nums = [2, 2, 3, ...]` then the time complexity will be `O(2)` which is `O(1)`. And auxiliary space complexity will be `O(1)` since there will be one element in the hash map `seen`. This is the best case.
 
 ### JavaScript Implementation
 

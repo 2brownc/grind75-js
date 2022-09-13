@@ -54,7 +54,7 @@ FUNCTION containsDuplicate(nums)
 
 At worst there is no duplicate elements and the program has to traverse the whole array `nums` which is of length `n`. So time complexity is `O(n)` at worst case.
 
-**Auxiliary Space Complexity: O(n)**
+**Auxiliary Space Complexity: `O(n)`**
 
 Again at the worst there are no duplicate elements and the program has to traverse the whole array `nums`. In this process the hash map `seen` will be populated with all the `n` elements of the array. So auxiliary time complexity is `O(n)` at worst case.
 
