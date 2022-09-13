@@ -1,39 +1,42 @@
 // using Divide and Conquer method (iterative)
 
-function majorityElement(nums) {
-  const countElements = (element, low, high) => {
-    let count = 0;
-    for (let i = low; i <= high; i++) {
-      if (nums[i] === count) {
-        count += 1;
-      }
+function countElements(low, high, element, array) {
+  let count = 0;
+  for (let i = low; i <= high; i++) {
+    if (array[i] === element) {
+      count += 1;
     }
   }
+  return count;
+}
 
-  const getMajorityElement = (low, high) => {
-    if (low === high) {
-      return nums[low]
-    }
+function getMajorityElement(low, high, array) {
+  if (low === high) {
+    return array[low];
+  }
 
-    const mid = Math.floor((high - low) / 2);
+  const mid = low + Math.floor((high - low) / 2);
 
-    const left = getMajorityElement(low, mid);
-    const right = getMajorityElement(mid + 1, high);
+  const left = getMajorityElement(low, mid, array);
+  const right = getMajorityElement(mid + 1, high, array);
 
-    if (left === right) {
-      return left;
-    }
+  if (left === right) {
+    return left;
+  }
 
-    const leftCount = countElements(left, low, high);
-    const rightCount = countElements(right, low, high);
+  const leftCount = countElements(low, high, left, array);
+  const rightCount = countElements(low, high, right, array);
 
-    const currentMajorityElement = leftCount > rightCount ? left : right;
+  const currentMajorityElement = leftCount > rightCount ? left : right;
 
-    return currentMajorityElement;
+  return currentMajorityElement;
 
-  };
+};
 
-  return getMajorityElement(0, nums.length - 1);
+function majorityElement(nums) {
+  const low = 0;
+  const high = nums.length - 1;
+  return getMajorityElement(low, high, nums);
 };
 
 export { majorityElement };

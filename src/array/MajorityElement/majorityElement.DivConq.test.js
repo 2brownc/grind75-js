@@ -1,8 +1,9 @@
-import { majorityElement } from './majorityElement';
+import { majorityElement } from './majorityElement.DivConq';
 
 const knownTests = [
   [[3, 2, 3], 3],
   [[2, 2, 1, 1, 1, 2, 2], 2],
+  [[3, 3, 4], 3]
 ];
 
 const prepareTests = knownTests.map(array => ({
