@@ -27,10 +27,11 @@ function getMajorityElement(low, high, array) {
   const leftCount = countElements(low, high, left, array);
   const rightCount = countElements(low, high, right, array);
 
-  const currentMajorityElement = leftCount > rightCount ? left : right;
-
-  return currentMajorityElement;
-
+  if (leftCount > rightCount) {
+    return left;
+  } else {
+    return right;
+  }
 };
 
 function majorityElement(nums) {
