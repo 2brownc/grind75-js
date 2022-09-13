@@ -57,11 +57,11 @@ FUNCTION twoSum(nums, target)
 
 **Time Complexity: `O(n)`**
 
-The input array `nums` is traversed once in the worst case. So time complexity is `O(n)`
+The input array `nums` is traversed once in the worst case where `difference` exists at the end. So time complexity is `O(n)`
 
 **Auxiliary Space Complexity: `O(n)`**
 
-In the worst case the program has to traverse to the end of the array `nums` for `difference` the hash map will be populated to a length of `n-1`. So auxiliary space complexity at the worst case is `O(n)`.
+In the worst case the program has to traverse to the end of the array `nums` for `difference` then the hash map will be populated to a length of `n-1`. So auxiliary space complexity at the worst case is `O(n)`.
 
 ### JavaScript Implementation
 
