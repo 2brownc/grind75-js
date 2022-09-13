@@ -47,11 +47,21 @@ FUNCTION twoSum(nums, target)
 	
 	FOR i IN {0..nums.length-1} DO
 		difference <- target - nums[i]
-		IF difference ∈ seen THEN
+		IF difference IN seen THEN
 			RETURN [seen[difference], i]
 		ELSE
 			seen[nums[i]] <- i;
 ```
+
+### Complexity Analysis
+
+**Time Complexity: `O(n)`**
+
+The input array `nums` is traversed once at most. So it's `O(n)`
+
+**Auxiliary Space Complexity: `O(1)`**
+
+No new memory is allocated other than a few variables that take up constant space, so it's `O(1)`
 
 ### JavaScript Implementation
 
