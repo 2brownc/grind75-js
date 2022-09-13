@@ -127,3 +127,154 @@ function majorityElement(nums) {
 
 ### Discussion
 
+- The given array is recursively divided into a left part and a right and the majority element is each part is determined.
+- The operation of slicing the array and passing a new copy of it costly and will slow down the algorithm.
+- So we will just pass the array by reference and pass the corresponding indices.
+- If the same element is returned as majority element in left and right part then it is the majority element for that whole range (left + right part).
+- If a different element is returned from left and right then the element with the highest count in that whole range (left + right part) is returned as majority element.
+- If different elements with equal counts are returned then the right element is arbitrarily selected.
+- The element that is majority element in most parts is also the majority element for the whole array.
+
+![image](<./images/majElem_divConq.png> "Solving Majority Element Using Divide and Conquer")
+
+### Algorithm
+
+- Recursively divide `nums` into left and right parts.
+- Determine the majority element from each part.
+- If an element is the only element in a part then it is the majority element.
+- If same element is received from left and right parts then it is the majority element.
+- Otherwise, element with the higher count is the majority element.
+- If different elements with equal count are received from left and right then the right element is always chosen arbitrarily. (left element can also be chosen but be consistent)
+- As we determine the majority element from smallest parts to the array itself we will have the majority element.
+
+### Pseudo Code
+
+```
+/*
+  count the number of occurrences
+  of an element
+  in an array
+  for a given range
+*/
+FUNCTION countElements (low, high, element, array)
+  count <- 0
+  FOR i in {low..high} DO
+    IF array[i] == element THEN
+      count <- count + 1
+
+  RETURN count
+
+/*
+  recursively divide the given array
+  and determine the majority element
+*/
+FUNCTION getMajorityElement(low, high, array)
+  IF low == high THEN
+    RETURN array[low]
+  
+  mid <- low + (high - low) // 2
+  left <- getMajorityElement(low, mid, array)
+  right <- getMajorityElement(mid+1, high, array)
+  
+  IF left == right THEN
+    RETURN left;
+  
+  leftCount <- countElements(low, high, left, array)
+  rightCount <- countElements(low, high, right, array)
+  
+  IF leftCount > rightCount THEN
+    RETURN left
+  ELSE
+    RETURN right
+
+/*
+  pass in the input
+  to the recursive function
+  and return the output
+*/
+
+FUNCTION majorityElement(nums)
+  low <- 0
+  high <- nums.length - 1
+  RETURN getMajorityElement(low, high, nums)
+};
+```
+
+### Complexity Analysis
+
+**Time Complexity: `O(n log n)`**
+
+For a Divide and Conquer algorithm time complexity depends on:
+
+- the work of splitting the problem and combining the partial solutions is proportional to the problem's size, `n`
+- the number of sub-problems at each stage, `n/p`
+
+<center><code>O(n log<sub>p</sub> n)</code></center>
+
+In our case `n` is the length of the input array `nums`. And `p` is `2` since we divide the array into 2 parts i.e. into left and right parts at every step/stage.
+
+So,
+
+<center><code>O(n log<sub>2</sub> n)</code></center>
+
+simply,
+
+<center><code>O(n log n)</code></center>
+
+(in computer science the base 2 of logarithm is usually implied)
+
+**Auxiliary Space Complexity: `O(log n)`**
+
+We divide the array into 2 parts at every step. So, for an array of `n` elements it will take `log n` steps to completely go through the array as in only a single element remains at the last step.
+
+No new memory is allocated at each step but since we are using recursion the stack will allocate memory for each new frame at every step. But we already know the number of steps to be `log n` so the Auxiliary Space Complexity will be
+
+<center><code>O(log n)</code></center>
+
+### JavaScript
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+ 
+function countElements(low, high, element, array) {
+  let count = 0;
+  for (let i = low; i <= high; i++) {
+    if (array[i] === element) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+function getMajorityElement(low, high, array) {
+  if (low === high) {
+    return array[low];
+  }
+
+  const mid = low + Math.floor((high - low) / 2);
+
+  const left = getMajorityElement(low, mid, array);
+  const right = getMajorityElement(mid + 1, high, array);
+
+  if (left === right) {
+    return left;
+  }
+
+  const leftCount = countElements(low, high, left, array);
+  const rightCount = countElements(low, high, right, array);
+
+  const currentMajorityElement = leftCount > rightCount ? left : right;
+
+  return currentMajorityElement;
+
+};
+
+function majorityElement(nums) {
+  const low = 0;
+  const high = nums.length - 1;
+  return getMajorityElement(low, high, nums);
+};
+```
