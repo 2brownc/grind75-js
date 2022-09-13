@@ -1,11 +1,11 @@
 function containsDuplicate(nums) {
   const seen = new Map();
 
-  for (const num of nums) {
-    if (seen.get(num) === true) {
+  for (let i = 0; i < nums.length; i++) {
+    if (seen.get(nums[i]) === true) {
       return true;
     } else {
-      seen.set(num, true);
+      seen.set(nums[i], true);
     }
   }
 
