@@ -122,3 +122,8 @@ function majorityElement(nums) {
 
 
 ```
+
+## Solution #2: Divide and Conquer
+
+### Discussion
+
