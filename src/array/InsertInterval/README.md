@@ -45,7 +45,7 @@ currentInterval = [a2, b2]
 mergedInterval = [min(a1, a2), max(b1,b2)];
 ```
 
-**The Plan**
+**Three Scenarios**
 
 The first step in solving this problem is recognizing that each interval that we push to the array `updatedIntervals` will depend on how `interval` stands against the current `currentInterval`. There are three cases.
 
@@ -64,6 +64,16 @@ The first step in solving this problem is recognizing that each interval that we
 `interval` occurs after the current `currentInterval`. That means the `interval` and all the subsequent elements in `intervals` can be pushed into `udpatedIntervals`.
 
 Once we traverse through `intervals` deciding which interval needs to be pushed to `udpatedIntervals` according to the above cases then we will have successfully completed the task.
+
+## Algorithm
+
+- Input: `intervals`, `newInterval`
+- Traverse the array `intervals`.
+- Now we will deal with intervals that fit any of the three cases mentioned above, if they exist.
+- First push, if any exist, all intervals that fit "Case 1"  i.e. ones that occur before `newInterval` into `updatedIntervals`. 
+- Then intervals that fit "Case 2" i.e. the intervals that overlap with `newInterval` or other subsequent intervals maybe encountered. Merge and push them into `updatedIntervals`.
+- Now only intervals that that fit "Case 3", ones that occur after `newInterval` and do not overlap might be present. Push all of them into `updatedIntervals`.
+- `updatedIntervals` is the required array that will be returned after the traversal of `intervals` is completed.
 
 ## Pseudo Code
 
