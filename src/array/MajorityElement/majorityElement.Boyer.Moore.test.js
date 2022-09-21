@@ -1,4 +1,4 @@
-import { majorityElement } from './majorityElement';
+import { majorityElement } from './majorityElement.Boyer.Moore';
 
 const knownTests = [
   [[3, 2, 3], 3],
