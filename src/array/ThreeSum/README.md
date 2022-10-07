@@ -353,7 +353,7 @@ Create a hash map, `numsHash`, mapping values to indices from the array `nums`. 
 - While traversing the array `nums` using two loops with each loop having `addend1` and `addend2` as current element.
 - Check `addend3` i.e. `addend3 = 0 - (addend1 + addend2)` exists in `nums` using created hash, `numsHash`.
 - If `addend3` exists and is less than `addend2` push `[addend1, addend2, addend3]` into `triplets`.
-- Avoid duplicates: Slip to the last entry of `addend1` and `addend2` in `nums` using `numsHash`. Then continue the traversal of `nums`.
+- Avoid duplicates: Skip to the last entry of `addend1` and `addend2` in `nums` using `numsHash`. Then continue the traversal of `nums`.
 - Return `triplets`.
 
 ### Pseudo Code
@@ -420,7 +420,6 @@ FUNCTION threeSum(nums)
 **Time Complexity: <code>O(n<sup>2</sup>)</code>**
 
 The array `nums` is traversed twice in two nested loops. 
-
 
 **Auxiliary Space Complexity: `O(n)`**
 
