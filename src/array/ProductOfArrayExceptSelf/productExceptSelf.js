@@ -1,26 +1,20 @@
 function productExceptSelf(nums) {
   const answer = [];
-  answer.push(nums[0]);
+  let prefix = 1;
+  let postfix = 1;
 
-  for (let i = 1; i < nums.length; i++) {
-    answer[i] = answer[i - 1] * nums[i - 1];
-    console.log("s1 iter", answer[i - 1], nums[i - 1], answer[i - 1] * nums[i - 1]);
+  for (let i = nums.length - 1; i >= 0; i--) {
+    answer[i] = postfix;
+    postfix *= nums[i];
   }
 
-  console.log("S1", answer);
-
-  const s2 = [1];
-  for (
-    let i = nums.length - 2, k = 1;
-    i >= 0;
-    i--
-  ) {
-    k = k * nums[i + 1];
-    s2.push(k);
-    answer[i] = answer[i] * k;
+  for (let i = 0; i < nums.length; i++) {
+    answer[i] *= prefix;
+    prefix *= nums[i];
   }
 
-  console.log("s2", s2.reverse());
+  console.log("ans", answer);
+
 
   return answer;
 }
