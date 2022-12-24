@@ -49,9 +49,9 @@ First the array, `nums`, should be sorted (ascending) so it will help with:
 *Base Cases:*
 
 - If the `nums` contains less than tree elements return `[]`; because a sum of three elements is required.
-- If `nums[0] > 0` return `[]`; because sum of positive numbers is never `0`.
-- If `nums[-1] < 0` return `[]`; because sum of negative numbers is never `0`.
-- While traversing through the `nums` if `pivot` is greater then zero return `[]`; because even the later numbers will be positive and the sum of positive numbers is never `0`.
+- If `nums[0] > 0` return `[]`; because all the subsequent numbers will be positive and their sum can't be `0`.
+- If `nums[-1] < 0` return `[]`; because all the subsequent numbers will be negative and their sum can't be `0`.
+- While traversing through the `nums` if `pivot` is greater then zero return `[]`; because all the subsequent numbers will be positive and their sum can't be `0`.
 
 *Select a pivot:*
 
@@ -59,7 +59,7 @@ While traversing through `nums` each element is considered as a `pivot`. If ther
 
 *Select `low` and `high` pointers:*
 
-Then traverse the remaining section of `nums` with two pointers `low` which is at the start of the section and `high` which is at the `end`.
+Then traverse the remaining section of `nums`, which begins after the pivot, with two pointers `low` which is at the start of the section and `high` which is at the `end`.
 
 *Adjust `low` and `high` pointers so the `sum` is `0`:*
 
@@ -78,6 +78,7 @@ If the sum is `0` add the triplet to the results array, `triplets`.
 
 - Input: `nums`
 - Output: `triplets`
+- Sort the array, `nums` in an ascending order.
 - While traversing the array `nums`, consider an element `nums[pivot]`; skip any duplicates of the element.
 - Now select two pointers `nums[low]` and `nums[high] where `low = pivot + 1` and `high = nums.length - 1`. So at the start and end of the remaining array after `nums[pivot]`
 - Consider `sum = nums[pivot] + nums[low] + nums[high]`.
@@ -98,9 +99,12 @@ FUNCTION threeSum(nums)
   */
   IF nums.length < 3 THEN
     RETURN []
-    
+
+  // sort in ascending order
+  nums <- SORT(nums)
+
   /*
-    base case
+    base case:
     if nums consists of all
     positive or negative numbers
     the sum can never be zero
@@ -109,17 +113,6 @@ FUNCTION threeSum(nums)
     RETURN []
         
   triplets <- []
-  
-  // sort in ascending order
-  nums <- SORT(nums)
-  
-  /*
-    base case
-    if all numbers are positive
-    then sum of them can't be 0
-  */
-  IF nums[0] > 0 THEN
-    RETURN []
   
   FOR pivot IN {0..nums.length-1} DO
     /*
