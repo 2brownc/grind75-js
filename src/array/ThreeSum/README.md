@@ -306,9 +306,9 @@ Map(6) { 1 => 0, 2 => 2, 3 => 3, 4 => 4, 5 => 6, 6 => 7 }
 *Base Cases:*
 
 - If the `nums` contains less than tree elements return `[]`; because a sum of three elements is required.
-- If `nums[0] > 0` return `[]`; because sum of positive numbers is never `0`.
-- If `nums[-1] < 0` return `[]`; because sum of negative numbers is never `0`.
-- While traversing through the `nums` if `pivot` is greater then zero return `[]`; because even the later numbers will be positive and the sum of positive numbers is never `0`.
+- If `nums[0] > 0` return `[]`; because all the subsequent numbers will be positive and their sum can't be `0`.
+- If `nums[-1] < 0` return `[]`; because all the subsequent numbers will be negative and their sum can't be `0`.
+- While traversing through the `nums` if `pivot` is greater then zero return `[]`; because all the subsequent numbers will be positive and their sum can't be `0`.
 
 *Create a Hash Map:*
 
