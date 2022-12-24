@@ -36,6 +36,8 @@ This is the answer to the follow-up question: *Could you solve the problem in li
 
 ![image](<./images/nikolai-chernichenko-hFBsF-CX5eQ-unsplash.jpg> "Array sliced just like this apple.")
 
+Photo Credit: [Nikolai Chernichenko](https://unsplash.com/photos/hFBsF-CX5eQ)
+
 - Now, the traversal starts: the `candidate` is set to the first element of the slice and counter is set to `0`.
 - Every time `candidate` is encountered the counter is incremented. Otherwise the `counter` is decremented.
 - If the `counter` decrements to `0` then it indicates the end of the current slice. It does not tell us if the `candidate` is the majority element or not.
