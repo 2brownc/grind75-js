@@ -13,9 +13,6 @@ function productExceptSelf(nums) {
     prefix *= nums[i];
   }
 
-  console.log("ans", answer);
-
-
   return answer;
 }
 
