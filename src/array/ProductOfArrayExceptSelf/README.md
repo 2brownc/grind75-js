@@ -36,7 +36,7 @@ Output: [0,0,9,0,0]
 
 ### Discussion
 
-The naive solution would invovle calculating the product of all the elements of the array and  dividing it with each element of the array to obtain the required result.
+The naive solution would involve calculating the product of all the elements of the array and  dividing it with each element of the array to obtain the required result.
 
 ```
 nums = [1, 2, 3, 4]
@@ -53,7 +53,7 @@ FOR element IN nums DO
 
 But now we can not use the division operation. The thing is, in the naive solution, we are "dividing out" the quantity that shouldn't have been there in the first place.
 
-Consided an array `nums = [p, q, r, s, t]`. The product of the array is `arrayProduct=pqrst`. Now the corresponding element for say `q` in the answer is `prst` as in `q` divided out in the arrayProduct `pqrst`.
+Consider an array `nums = [p, q, r, s, t]`. The product of the array is `arrayProduct=pqrst`. Now the corresponding element for say `q` in the answer is `prst` as in `q` divided out in the arrayProduct `pqrst`.
 
 ```
 nums   = [p,    q,    r,    s,    t   ]
@@ -75,25 +75,25 @@ answer    = [qrst, prst, pqst, pqrt, pqrs]
 \\ of fromLeft and fromRight
 ```
 
-For `fromLeft` we perform some kind of "cumilative multiplication". The first element of `fromLeft` is `1` because there is nothing to multiply before the first element. Then every subsequent element, `answer[i]` is the product of `nums[i-1]` and `fromLeft[i-1]`.
+For `fromLeft` we perform some kind of "cumulative multiplication". The first element of `fromLeft` is `1` because there is nothing to multiply before the first element. Then every subsequent element, `answer[i]` is the product of `nums[i-1]` and `fromLeft[i-1]`.
 
 For `fromRight` you do it from the right side.
 
 Then the required answer array, `answer` is formed by the product of corresponding elements of `fromLeft` and `fromRight`.
 
-**CONDITION 2: Auxilary space complexity should be `O(1)` i.e. do not use extra memory.**
+**CONDITION 2: Auxiliary space complexity should be `O(1)` i.e. do not use extra memory.**
 
 Except for the answer array, `answer`, no extra memory should be used. So no asymptotically significant memory usage. As in, you can use extra memory as long as it stays constant and does not increase with respect to the given input. 
 
 That means we  can't use `fromLeft` (prefix) and `fromRight` (suffix) arrays. We can only use the `answer` array.
 
-So we will perform oparetions performed on `fromLeft` and `fromRight` arrays on the `answer` array itself. 
+So we will perform operations performed on `fromLeft` and `fromRight` arrays on the `answer` array itself. 
 
 * First we will do a left sweep of array `a` and store the results in the array `answer`.
 * First element of `answer` will be `1` since there are no elements prior to `nums[0]`.
 * The subsequent elements of `answer`, `answer[i]`, will be product of `nums[i-1]` and `answer[i-1]`.
 * Then a sweep in the reverse direction, right sweep, is carried out.
-* In the right sweep the last element of `answer` is mutliplied with 1 because there is no element after `nums[n - 1]`. (where `nums` has `n` elements)
+* In the right sweep the last element of `answer` is multiplied with 1 because there is no element after `nums[n - 1]`. (where `nums` has `n` elements)
 * Then, every antecedent element, `answer[n]`, is multiplied with `nums[n+1]`
 * The resultant `answer` array is the required solution.
 
@@ -140,7 +140,7 @@ FUNCTION productExceptSelf(nums) {
 
 #### Time Complexity: O(n)
 
-The array nums is traversed twice, `O(n+n)` is `O(2n)` is `O(n)`.
+The array `nums` is traversed twice, `O(n+n)` is `O(2n)` is `O(n)`.
 
 #### Auxiliary Space Complexity: O(1)
 
